@@ -34,10 +34,10 @@ namespace ExpenseTracker.API.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] User login)
+        public IActionResult Login([FromBody] LoginDto login)
         {
             var user = _context.Users.FirstOrDefault(u =>
-                u.Username == login.Username && u.PasswordHash == login.PasswordHash);
+                u.Username == login.Username && u.PasswordHash == login.Password);
 
             if (user == null) return Unauthorized("Invalid credentials");
 

@@ -7,4 +7,10 @@
         public string PasswordHash { get; set; } = string.Empty;
         public string Role { get; set; } = "User";
     }
+    public class LoginDto
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+
 }
