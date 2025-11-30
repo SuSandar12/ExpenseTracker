@@ -6,5 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class ExpenseController : ControllerBase
 {
-    
+    [Authorize]
+    [HttpGet("expenses")]
+    public IActionResult GetExpenses()
+    {
+        // Logic to retrieve expenses for the authenticated user
+        return Ok(new { message = "List of expenses" });
+    }
 }
